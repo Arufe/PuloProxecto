@@ -33,9 +33,10 @@
     var sections = ids
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
-    var navLinks = (window.PP.header.getNavLinks() || []).filter(function (link) {
-      return link.getAttribute("href").charAt(0) === "#";
-    });
+    var navLinks = ((window.PP && window.PP.header && window.PP.header.getNavLinks()) || [])
+      .filter(function (link) {
+        return link.getAttribute("href").charAt(0) === "#";
+      });
 
     if (!("IntersectionObserver" in window) || !sections.length) return;
 

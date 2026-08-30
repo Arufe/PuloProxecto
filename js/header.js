@@ -2,6 +2,10 @@
 (function () {
   "use strict";
 
+  function getDictSafe() {
+    return window.PP && window.PP.i18n ? window.PP.i18n.getDict() : {};
+  }
+
   var header = document.querySelector("[data-header]");
   var menuToggle = document.querySelector(".menu-toggle");
   var nav = document.querySelector("#main-nav");
@@ -15,7 +19,7 @@
 
   function closeMenu() {
     if (!menuToggle || !nav) return;
-    var dict = window.PP.i18n.getDict();
+    var dict = getDictSafe();
     menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.setAttribute("aria-label", dict["menu.open"] || "Abrir menú");
     nav.classList.remove("is-open");
@@ -27,7 +31,7 @@
 
     menuToggle.addEventListener("click", function () {
       var isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      var dict = window.PP.i18n.getDict();
+      var dict = getDictSafe();
       menuToggle.setAttribute("aria-expanded", String(!isOpen));
       menuToggle.setAttribute(
         "aria-label",

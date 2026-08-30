@@ -4,6 +4,14 @@
 
   var config = window.PP_CONFIG || {};
 
+  function dict() {
+    return window.PP && window.PP.i18n ? window.PP.i18n.getDict() : {};
+  }
+
+  function currentLang() {
+    return window.PP && window.PP.i18n ? window.PP.i18n.getCurrentLang() : "gl";
+  }
+
   function initForm() {
     var form = document.querySelector("[data-form]");
     if (!form) return;
@@ -21,7 +29,7 @@
       if (!wrapper) return;
       var errorEl = wrapper.querySelector("[data-error]");
       if (!errorEl) return;
-      errorEl.textContent = window.PP.i18n.getDict()[key] || "";
+      errorEl.textContent = dict()[key] || "";
       errorEl.hidden = false;
       wrapper.classList.add("has-error");
     }
@@ -42,7 +50,7 @@
       submitBtn.disabled = sending;
       var label = submitBtn.querySelector("span");
       if (label) {
-        label.textContent = sending ? window.PP.i18n.getDict()["form.sending"] : window.PP.i18n.getDict()["form.submit"];
+        label.textContent = sending ? dict()["form.sending"] : dict()["form.submit"];
       }
     }
 
@@ -59,7 +67,7 @@
       try {
         var stored = window.localStorage.getItem("pp-messages");
         var messages = stored ? JSON.parse(stored) : [];
-        messages.push({ date: new Date().toISOString(), lang: window.PP.i18n.getCurrentLang(), data: values });
+        messages.push({ date: new Date().toISOString(), lang: currentLang(), data: values });
         window.localStorage.setItem("pp-messages", JSON.stringify(messages));
       } catch (error) {
         /* almacenamento non dispoñible */
@@ -67,7 +75,7 @@
     }
 
     function showSuccess(values) {
-      var dict = window.PP.i18n.getDict();
+      var dict = dict();
       lastMessage = composeMessage(dict, values);
 
       if (mailtoLink) {
@@ -133,7 +141,7 @@
       var captchaField = form.querySelector('textarea[name="h-captcha-response"]');
       if (captchaField && !captchaField.value) {
         if (sendErrorEl) {
-          sendErrorEl.textContent = window.PP.i18n.getDict()["err.captcha"];
+          sendErrorEl.textContent = dict()["err.captcha"];
           sendErrorEl.hidden = false;
         }
         return;
@@ -143,7 +151,7 @@
 
       var formData = new FormData(form);
       formData.append("access_key", config.WEB3FORMS_KEY);
-      formData.append("subject", window.PP.i18n.getDict()["form.subject"]);
+      formData.append("subject", dict()["form.subject"]);
 
       fetch(config.WEB3FORMS_URL, { method: "POST", body: formData })
         .then(function (response) {
@@ -154,7 +162,7 @@
         })
         .catch(function () {
           if (sendErrorEl) {
-            sendErrorEl.textContent = window.PP.i18n.getDict()["err.send"];
+            sendErrorEl.textContent = dict()["err.send"];
             sendErrorEl.hidden = false;
           }
         })
@@ -169,9 +177,9 @@
         var label = copyBtn.querySelector("span");
         var done = function () {
           if (!label) return;
-          label.textContent = window.PP.i18n.getDict()["form.copied"];
+          label.textContent = dict()["form.copied"];
           window.setTimeout(function () {
-            label.textContent = window.PP.i18n.getDict()["form.copy"];
+            label.textContent = dict()["form.copy"];
           }, 2000);
         };
 
