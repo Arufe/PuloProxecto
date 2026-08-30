@@ -1,0 +1,218 @@
+// Formulario — validación, hCaptcha, envío vía Web3Forms, éxito y reset
+(function () {
+  "use strict";
+
+  var config = window.PP_CONFIG || {};
+
+  function initForm() {
+    var form = document.querySelector("[data-form]");
+    if (!form) return;
+
+    var successEl = form.querySelector("[data-form-success]");
+    var submitBtn = form.querySelector("[data-submit]");
+    var sendErrorEl = form.querySelector("[data-error-send]");
+    var copyBtn = form.querySelector("[data-copy]");
+    var mailtoLink = form.querySelector("[data-mailto]");
+    var resetBtn = form.querySelector("[data-reset]");
+    var lastMessage = "";
+
+    function showError(field, key) {
+      var wrapper = field.closest(".form-field");
+      if (!wrapper) return;
+      var errorEl = wrapper.querySelector("[data-error]");
+      if (!errorEl) return;
+      errorEl.textContent = window.PP.i18n.getDict()[key] || "";
+      errorEl.hidden = false;
+      wrapper.classList.add("has-error");
+    }
+
+    function clearError(field) {
+      var wrapper = field.closest(".form-field");
+      if (!wrapper) return;
+      var errorEl = wrapper.querySelector("[data-error]");
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = "";
+      }
+      wrapper.classList.remove("has-error");
+    }
+
+    function setSending(sending) {
+      if (!submitBtn) return;
+      submitBtn.disabled = sending;
+      var label = submitBtn.querySelector("span");
+      if (label) {
+        label.textContent = sending ? window.PP.i18n.getDict()["form.sending"] : window.PP.i18n.getDict()["form.submit"];
+      }
+    }
+
+    function composeMessage(dict, values) {
+      return (
+        dict["form.name"] + ": " + values.name + "\n" +
+        dict["form.org"] + ": " + (values.org || "-") + "\n" +
+        dict["form.email"] + ": " + values.email + "\n\n" +
+        dict["form.msg"] + ": " + values.message
+      );
+    }
+
+    function storeMessage(values) {
+      try {
+        var stored = window.localStorage.getItem("pp-messages");
+        var messages = stored ? JSON.parse(stored) : [];
+        messages.push({ date: new Date().toISOString(), lang: window.PP.i18n.getCurrentLang(), data: values });
+        window.localStorage.setItem("pp-messages", JSON.stringify(messages));
+      } catch (error) {
+        /* almacenamento non dispoñible */
+      }
+    }
+
+    function showSuccess(values) {
+      var dict = window.PP.i18n.getDict();
+      lastMessage = composeMessage(dict, values);
+
+      if (mailtoLink) {
+        mailtoLink.setAttribute(
+          "href",
+          "mailto:" + config.CONTACT_EMAIL +
+            "?subject=" + encodeURIComponent(dict["form.subject"]) +
+            "&body=" + encodeURIComponent(lastMessage)
+        );
+      }
+
+      form.classList.add("is-sent");
+      if (sendErrorEl) sendErrorEl.hidden = true;
+      if (successEl) successEl.hidden = false;
+      storeMessage(values);
+    }
+
+    function validate() {
+      var nameField = form.querySelector("#f-name");
+      var emailField = form.querySelector("#f-email");
+      var msgField = form.querySelector("#f-msg");
+      var isValid = true;
+
+      [nameField, emailField, msgField].forEach(clearError);
+      if (successEl) successEl.hidden = true;
+      if (sendErrorEl) sendErrorEl.hidden = true;
+
+      if (!nameField.value.trim()) {
+        showError(nameField, "err.required");
+        isValid = false;
+      }
+
+      var emailValue = emailField.value.trim();
+      if (!emailValue) {
+        showError(emailField, "err.required");
+        isValid = false;
+      } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailValue)) {
+        showError(emailField, "err.email");
+        isValid = false;
+      }
+
+      if (!msgField.value.trim()) {
+        showError(msgField, "err.required");
+        isValid = false;
+      }
+
+      if (!isValid) return null;
+
+      return {
+        name: nameField.value.trim(),
+        org: form.querySelector("#f-org").value.trim(),
+        email: emailValue,
+        message: msgField.value.trim()
+      };
+    }
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      var values = validate();
+      if (!values) return;
+
+      var captchaField = form.querySelector('textarea[name="h-captcha-response"]');
+      if (captchaField && !captchaField.value) {
+        if (sendErrorEl) {
+          sendErrorEl.textContent = window.PP.i18n.getDict()["err.captcha"];
+          sendErrorEl.hidden = false;
+        }
+        return;
+      }
+
+      setSending(true);
+
+      var formData = new FormData(form);
+      formData.append("access_key", config.WEB3FORMS_KEY);
+      formData.append("subject", window.PP.i18n.getDict()["form.subject"]);
+
+      fetch(config.WEB3FORMS_URL, { method: "POST", body: formData })
+        .then(function (response) {
+          return response.json().then(function (data) {
+            if (!response.ok || !data.success) throw new Error(data.message || "HTTP " + response.status);
+            showSuccess(values);
+          });
+        })
+        .catch(function () {
+          if (sendErrorEl) {
+            sendErrorEl.textContent = window.PP.i18n.getDict()["err.send"];
+            sendErrorEl.hidden = false;
+          }
+        })
+        .then(function () {
+          setSending(false);
+        });
+    });
+
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        if (!lastMessage) return;
+        var label = copyBtn.querySelector("span");
+        var done = function () {
+          if (!label) return;
+          label.textContent = window.PP.i18n.getDict()["form.copied"];
+          window.setTimeout(function () {
+            label.textContent = window.PP.i18n.getDict()["form.copy"];
+          }, 2000);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(lastMessage).then(done);
+        } else {
+          var helper = document.createElement("textarea");
+          helper.value = lastMessage;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "absolute";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          document.execCommand("copy");
+          document.body.removeChild(helper);
+          done();
+        }
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", function () {
+        form.classList.remove("is-sent");
+        form.reset();
+        if (successEl) successEl.hidden = true;
+        form.querySelectorAll(".form-field.has-error").forEach(clearError);
+      });
+    }
+
+    ["input", "blur"].forEach(function (eventType) {
+      form.addEventListener(eventType, function (event) {
+        var field = event.target;
+        if (field.matches("input, textarea") && field.closest(".form-field.has-error")) {
+          if (field.value.trim()) clearError(field);
+        }
+      }, true);
+    });
+  }
+
+  window.PP = window.PP || {};
+  window.PP.form = {
+    initForm: initForm
+  };
+}());

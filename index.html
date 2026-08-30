@@ -1,20 +1,20 @@
 <!doctype html>
-<html lang="es">
+<html lang="gl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PuloProxecto | Consultoría y proyectos Erasmus+</title>
-  <meta name="description" content="Ayudamos a asociaciones, entidades y organismos a transformar sus ideas en proyectos Erasmus+ y oportunidades europeas.">
+  <title>PuloProxecto | Consultoría e proxectos Erasmus+</title>
+  <meta name="description" content="Axudamos a asociacións, entidades e organismos a transformar as súas ideas en proxectos Erasmus+ e oportunidades europeas.">
   <meta name="theme-color" content="#f7f5f1">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="es_ES">
-  <meta property="og:title" content="PuloProxecto | Consultoría y proyectos Erasmus+">
-  <meta property="og:description" content="Ayudamos a asociaciones, entidades y organismos a transformar sus ideas en proyectos Erasmus+ y oportunidades europeas.">
+  <meta property="og:locale" content="gl_ES">
+  <meta property="og:title" content="PuloProxecto | Consultoría e proxectos Erasmus+">
+  <meta property="og:description" content="Axudamos a asociacións, entidades e organismos a transformar as súas ideas en proxectos Erasmus+ e oportunidades europeas.">
   <meta property="og:url" content="[URL DEL SITIO]">
   <meta property="og:image" content="[URL DE LA IMAGEN OG]">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PuloProxecto | Consultoría y proyectos Erasmus+">
-  <meta name="twitter:description" content="Ayudamos a asociaciones, entidades y organismos a transformar sus ideas en proyectos Erasmus+ y oportunidades europeas.">
+  <meta name="twitter:title" content="PuloProxecto | Consultoría e proxectos Erasmus+">
+  <meta name="twitter:description" content="Axudamos a asociacións, entidades e organismos a transformar as súas ideas en proxectos Erasmus+ e oportunidades europeas.">
   <link rel="canonical" href="[URL DEL SITIO]">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c34f30'/%3E%3Cpath d='M18 45V18h13c8 0 12 4 12 10s-4 10-12 10h-5v7h-8Zm8-14h5c3 0 5-1 5-3s-2-3-5-3h-5v6Z' fill='%23f7f5f1'/%3E%3Cpath d='m43 39 8-8-8-8' fill='none' stroke='%23f7f5f1' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,30 +34,36 @@
       "addressRegion": "Galicia",
       "addressCountry": "ES"
     },
-    "description": "Consultoría y proyectos europeos."
+    "description": "Consultoría e proxectos europeos."
   }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido" data-i18n="skip">Saltar ao contido</a>
 
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="#inicio" aria-label="PuloProxecto, volver al inicio">
+      <a class="brand" href="#inicio" aria-label="PuloProxecto" data-i18n-aria="aria.brand">
         <span class="brand-mark" aria-hidden="true"><span></span></span>
         <span class="brand-name">Pulo<span>Proxecto</span></span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
-        <span></span><span></span>
-      </button>
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Idioma / Idioma">
+          <button type="button" class="lang-btn" data-lang="gl" aria-pressed="true">GL</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú" data-i18n-aria="menu.open">
+          <span></span><span></span>
+        </button>
+      </div>
 
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-        <a href="#servicios">Qué hacemos</a>
-        <a href="#programas">Programas</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#proceso">Cómo trabajamos</a>
-        <a class="nav-contact" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+        <a href="#programas" data-i18n="nav.programas">Programas</a>
+        <a href="#proyectos" data-i18n="nav.proxectos">Proxectos</a>
+        <a href="#proceso" data-i18n="nav.proceso">Como traballamos</a>
+        <a class="nav-contact" href="#contacto"><span data-i18n="nav.falemos">Falemos</span> <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
@@ -67,20 +73,20 @@
       <div class="hero-grid container">
         <div class="hero-copy">
           <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> PULO PROXECTO <span class="eyebrow-place">/ SANTIAGO DE COMPOSTELA</span></p>
-          <h1 id="hero-title">Convertimos ideas en <em>proyectos europeos.</em></h1>
-          <p class="hero-intro">Ayudamos a asociaciones, entidades y organismos a transformar sus ideas en proyectos Erasmus+ y otras iniciativas europeas.</p>
+          <h1 id="hero-title"><span data-i18n="hero.t1">Axudamos a organizacións</span> <em data-i18n="hero.t2">a conseguir financiación europea.</em></h1>
+          <p class="hero-intro"><span data-i18n="hero.intro">Convertemos a vosa idea nun proxecto europeo e encargámonos de desenvolver a candidatura.</span> <span data-i18n="hero.fields">Erasmus+, mobilidade xuvenil, educación non formal e participación.</span></p>
           <div class="hero-actions">
-            <a class="button button-accent" href="#contacto">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a>
-            <a class="text-link text-link-light" href="#proceso">Cómo trabajamos <span aria-hidden="true">↓</span></a>
+            <a class="button button-accent" href="#contacto"><span data-i18n="hero.cta">Contade a vosa idea</span> <span aria-hidden="true">↗</span></a>
+            <a class="text-link text-link-light" href="#proceso"><span data-i18n="hero.cta2">Como traballamos</span> <span aria-hidden="true">↓</span></a>
           </div>
-          <div class="hero-footnote">
-            <span class="signal-mark" aria-hidden="true">+</span>
-            <p><strong>Sin coste inicial.</strong> Solo cobramos si el proyecto resulta aprobado y recibe financiación.</p>
+          <div class="hero-badge">
+            <strong data-i18n="hero.badgeTitle">SEN CUSTO INICIAL</strong>
+            <p data-i18n="hero.badgeText">Solo cobramos se o proxecto é aprobado e recibe financiación.</p>
           </div>
         </div>
 
         <div class="hero-art-wrap" aria-hidden="true">
-          <div class="art-caption art-caption-top">IDEA <span></span> PROPUESTA</div>
+          <div class="art-caption art-caption-top"><span data-i18n="art.top1">IDEA</span><span class="cap-line"></span><span data-i18n="art.top2">PROPOSTA</span></div>
           <svg class="hero-art" viewBox="0 0 620 620" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle class="art-orbit orbit-one" cx="311" cy="307" r="218" stroke="currentColor" stroke-width="1" stroke-dasharray="2 11"/>
             <circle class="art-orbit orbit-two" cx="311" cy="307" r="152" stroke="currentColor" stroke-width="1" stroke-dasharray="1 9"/>
@@ -97,64 +103,43 @@
             <path d="M311 194L424 307L311 420L198 307L311 194Z" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width="1"/>
             <path d="M274 307H348M311 270V344" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
           </svg>
-          <div class="art-caption art-caption-bottom"><span></span> MOVILIDAD · JUVENTUD · PARTICIPACIÓN</div>
+          <div class="art-caption art-caption-bottom"><span class="cap-line"></span><span data-i18n="art.bottom">MOBILIDADE · XUVENTUDE · PARTICIPACIÓN</span></div>
         </div>
       </div>
-      <div class="hero-index" aria-hidden="true">01 <span>/</span> 12</div>
+      <div class="hero-index" aria-hidden="true">01 <span>/</span> 09</div>
     </section>
 
     <section class="section problem" id="oportunidad" aria-labelledby="problem-title">
       <div class="container problem-grid">
         <div class="section-intro reveal">
-          <p class="eyebrow"><span class="eyebrow-number">01</span> EL PUNTO DE PARTIDA</p>
-          <h2 id="problem-title">¿Tenéis una buena idea, pero no sabéis cómo convertirla en un proyecto europeo?</h2>
+          <p class="eyebrow"><span class="eyebrow-number">01</span> <span data-i18n="problem.eyebrow">O PUNTO DE PARTIDA</span></p>
+          <h2 id="problem-title" data-i18n="problem.title">Tedes unha boa idea, pero non sabedes como convertila nun proxecto europeo?</h2>
         </div>
         <div class="problem-content reveal">
-          <p class="lead">Muchas organizaciones tienen ideas, necesidades o proyectos que podrían encontrar financiación europea, pero preparar una candidatura requiere tiempo, conocimientos específicos y una buena planificación.</p>
-          <p>Hay que encontrar el programa adecuado, definir objetivos, diseñar actividades, estructurar el proyecto, elaborar el presupuesto, preparar la documentación y, en muchos casos, trabajar con organizaciones de otros países.</p>
-          <blockquote><span class="quote-mark">“</span><p>Vosotros conocéis vuestra realidad. Nosotros sabemos cómo convertirla en un proyecto europeo.</p></blockquote>
+          <p class="lead" data-i18n="problem.lead">Moitas organizacións teñen ideas, necesidades ou proxectos que poderían atopar financiación europea, pero preparar unha candidatura require tempo, coñecementos específicos e unha boa planificación.</p>
+          <p data-i18n="problem.body">Hai que atopar o programa axeitado, definir obxectivos, deseñar actividades, estruturar o proxecto, elaborar o orzamento, preparar a documentación e, en moitos casos, traballar con organizacións doutros países.</p>
+          <blockquote><span class="quote-mark" aria-hidden="true">“</span><p data-i18n="problem.quote">Vós coñecedes a vosa realidade. Nós sabemos como convertela nun proxecto europeo.</p></blockquote>
         </div>
       </div>
       <div class="container opportunity-note reveal">
         <span class="opportunity-arrow" aria-hidden="true">↗</span>
-        <span>No hace falta ser una gran organización para desarrollar un proyecto europeo.</span>
+        <span data-i18n="problem.note">Non fai falta ser unha gran organización para desenvolver un proxecto europeo.</span>
       </div>
     </section>
 
-    <section class="section section-paper-alt services" id="servicios" aria-labelledby="services-title">
+    <section class="section process section-paper-alt" id="proceso" aria-labelledby="process-title">
       <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div>
-            <p class="eyebrow"><span class="eyebrow-number">02</span> LO QUE HACEMOS</p>
-            <h2 id="services-title">Del primer planteamiento <em>al proyecto.</em></h2>
-          </div>
-          <p class="heading-aside">Una idea clara, una propuesta con sentido y un equipo al otro lado.</p>
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span class="eyebrow-number">02</span> <span data-i18n="process.eyebrow">O CAMIÑO</span></p>
+          <h2 id="process-title"><span data-i18n="process.t1">Un proceso</span> <em data-i18n="process.t2">sinxelo.</em></h2>
         </div>
-        <div class="services-grid">
-          <article class="service-card service-card-feature reveal">
-            <div class="card-topline"><span>01</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-            <h3>Diseño de proyectos</h3>
-            <p>Ayudamos a estructurar y desarrollar la idea inicial hasta convertirla en un proyecto coherente.</p>
-            <div class="service-line" aria-hidden="true"></div>
-          </article>
-          <article class="service-card reveal">
-            <div class="card-topline"><span>02</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-            <h3>Redacción de propuestas</h3>
-            <p>Transformamos la idea en una candidatura clara, sólida y alineada con los objetivos de la convocatoria.</p>
-            <div class="service-line" aria-hidden="true"></div>
-          </article>
-          <article class="service-card reveal">
-            <div class="card-topline"><span>03</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-            <h3>Consultoría europea</h3>
-            <p>Analizamos oportunidades y orientamos sobre programas, prioridades, enfoques y posibles vías de participación.</p>
-            <div class="service-line" aria-hidden="true"></div>
-          </article>
-          <article class="service-card service-card-offset reveal">
-            <div class="card-topline"><span>04</span><span class="card-arrow" aria-hidden="true">↗</span></div>
-            <h3>Acompañamiento</h3>
-            <p>Trabajamos junto a la organización durante las distintas fases de preparación de la propuesta.</p>
-            <div class="service-line" aria-hidden="true"></div>
-          </article>
+        <div class="process-track">
+          <div class="process-line" aria-hidden="true"><span></span></div>
+          <article class="process-step reveal"><span class="step-number">01</span><div class="step-marker" aria-hidden="true"></div><h3 data-i18n="step1.t">Contade a vosa idea</h3><p data-i18n="step1.d">Primeira conversa gratuíta e sen compromiso.</p></article>
+          <article class="process-step reveal"><span class="step-number">02</span><div class="step-marker" aria-hidden="true"></div><h3 data-i18n="step2.t">Analizamos as oportunidades</h3><p data-i18n="step2.d">Identificamos programas e convocatorias que poidan encaixar.</p></article>
+          <article class="process-step reveal"><span class="step-number">03</span><div class="step-marker" aria-hidden="true"></div><h3 data-i18n="step3.t">Desenvolvemos a candidatura</h3><p data-i18n="step3.d">Convertemos a idea nun proxecto sólido e preparamos a documentación necesaria.</p></article>
+          <article class="process-step reveal"><span class="step-number">04</span><div class="step-marker" aria-hidden="true"></div><h3 data-i18n="step4.t">Presentamos o proxecto</h3><p data-i18n="step4.d">Acompañamos a organización durante o proceso de presentación.</p></article>
+          <article class="process-step reveal"><span class="step-number">05</span><div class="step-marker step-marker-final" aria-hidden="true">↗</div><h3 data-i18n="step5.t">Se se aproba, cobramos</h3><p data-i18n="step5.d">O modelo de colaboración está vinculado ao éxito do proxecto.</p></article>
         </div>
       </div>
     </section>
@@ -162,172 +147,215 @@
     <section class="section programs" id="programas" aria-labelledby="programs-title">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="eyebrow"><span class="eyebrow-number">03</span> ÁMBITOS DE TRABAJO</p>
-          <h2 id="programs-title">¿Qué tipo de proyectos <em>podemos desarrollar?</em></h2>
-          <p class="heading-description">Trabajamos especialmente en proyectos europeos relacionados con juventud, movilidad, educación no formal y participación.</p>
+          <p class="eyebrow"><span class="eyebrow-number">03</span> <span data-i18n="programs.eyebrow">ÁMBITOS DE TRABALLO</span></p>
+          <h2 id="programs-title"><span data-i18n="programs.t1">Que tipo de proxectos</span> <em data-i18n="programs.t2">podemos desenvolver?</em></h2>
+          <p class="heading-description" data-i18n="programs.desc">Traballamos especialmente en proxectos europeos relacionados coa xuventude, a mobilidade, a educación non formal e a participación.</p>
         </div>
         <div class="programs-grid">
           <article class="program-card program-card-main reveal">
-            <div class="program-head"><span class="program-tag">Erasmus+ / KA1</span><span class="program-symbol">01</span></div>
-            <h3>Intercambios<br><em>juveniles</em></h3>
-            <p>Proyectos que reúnen a jóvenes de distintos países para aprender, convivir y trabajar conjuntamente alrededor de una temática común mediante metodologías de educación no formal.</p>
+            <div class="program-head"><span class="program-tag" data-i18n="prog1.tag">Erasmus+ / KA1</span><span class="program-symbol">01</span></div>
+            <h3><span data-i18n="prog1.t1">Intercambios</span><br><em data-i18n="prog1.t2">xuvenís</em></h3>
+            <p data-i18n="prog1.d">Proxectos que reúnen a xoves de distintos países para aprender, convivir e traballar conxuntamente ao redor dunha temática común mediante metodoloxías de educación non formal.</p>
             <div class="topic-list" aria-label="Posibles ámbitos">
-              <span>Participación juvenil</span><span>Inclusión</span><span>Cultura</span><span>Sostenibilidad</span><span>Igualdad</span><span>Ciudadanía europea</span><span>Bienestar</span><span>Competencias digitales</span>
+              <span data-i18n="topic1">Participación xuvenil</span><span data-i18n="topic2">Inclusión</span><span data-i18n="topic3">Cultura</span><span data-i18n="topic4">Sostibilidade</span><span data-i18n="topic5">Igualdade</span><span data-i18n="topic6">Cidadanía europea</span><span data-i18n="topic7">Benestar</span><span data-i18n="topic8">Competencias dixitais</span>
             </div>
             <span class="program-corner" aria-hidden="true">↗</span>
           </article>
           <article class="program-card program-card-discover reveal">
-            <div class="program-head"><span class="program-tag">Movilidad juvenil</span><span class="program-symbol">02</span></div>
+            <div class="program-head"><span class="program-tag" data-i18n="prog2.tag">Mobilidade xuvenil</span><span class="program-symbol">02</span></div>
             <h3>Discover<span>EU</span></h3>
-            <p>Proyectos de movilidad y aprendizaje en los que el viaje por Europa se convierte en una herramienta para descubrir, aprender, compartir experiencias y conocer otras realidades.</p>
+            <p data-i18n="prog2.d">Proxectos de mobilidade e aprendizaxe nos que a viaxe por Europa se converte nunha ferramenta para descubrir, aprender, compartir experiencias e coñecer outras realidades.</p>
             <span class="program-corner" aria-hidden="true">↗</span>
           </article>
           <article class="program-card program-card-solidarity reveal">
-            <div class="program-head"><span class="program-tag">Cuerpo Europeo de Solidaridad</span><span class="program-symbol">03</span></div>
-            <h3>Proyectos de<br><em>Solidaridad</em></h3>
-            <p>Ayudamos a transformar iniciativas juveniles con impacto local en proyectos estructurados que puedan presentarse al Cuerpo Europeo de Solidaridad.</p>
-            <p class="program-note">Pueden abordar cuestiones sociales, culturales, medioambientales, educativas o comunitarias.</p>
+            <div class="program-head"><span class="program-tag" data-i18n="prog3.tag">Corpo Europeo de Solidaridade</span><span class="program-symbol">03</span></div>
+            <h3><span data-i18n="prog3.t1">Proxectos de</span><br><em data-i18n="prog3.t2">Solidaridade</em></h3>
+            <p data-i18n="prog3.d">Axudamos a transformar iniciativas xuvenís con impacto local en proxectos estruturados que poidan presentarse ao Corpo Europeo de Solidaridade.</p>
+            <p class="program-note" data-i18n="prog3.note">Poden abordar cuestións sociais, culturais, medioambientais, educativas ou comunitarias.</p>
             <span class="program-corner" aria-hidden="true">↗</span>
           </article>
           <article class="program-card program-card-cooperation reveal">
-            <div class="program-head"><span class="program-tag">Erasmus+ / KA2</span><span class="program-symbol">04</span></div>
-            <h3>Cooperación<br><em>europea</em></h3>
-            <p>Ayudamos a organizaciones que quieren desarrollar proyectos de cooperación con entidades de otros países.</p>
+            <div class="program-head"><span class="program-tag" data-i18n="prog4.tag">Erasmus+ / KA2</span><span class="program-symbol">04</span></div>
+            <h3><span data-i18n="prog4.t1">Cooperación</span><br><em data-i18n="prog4.t2">europea</em></h3>
+            <p data-i18n="prog4.d">Axudamos a organizacións que queren desenvolver proxectos de cooperación con entidades doutros países.</p>
             <span class="program-corner" aria-hidden="true">↗</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section audience section-dark" id="para-quien" aria-labelledby="audience-title">
+    <section class="section audience section-paper-alt" id="para-quen" aria-labelledby="audience-title">
       <div class="container audience-grid">
         <div class="audience-intro reveal">
-          <p class="eyebrow eyebrow-light"><span class="eyebrow-number">04</span> CON QUIÉN TRABAJAMOS</p>
-          <h2 id="audience-title">Organizaciones que quieren dar el <em>siguiente paso.</em></h2>
-          <p>Lo importante es tener una idea, una necesidad o un proyecto que pueda tener sentido dentro de una oportunidad europea.</p>
+          <p class="eyebrow"><span class="eyebrow-number">04</span> <span data-i18n="audience.eyebrow">CON QUEM TRABALLAMOS</span></p>
+          <h2 id="audience-title"><span data-i18n="audience.t1">Organizacións que queren dar</span> <em data-i18n="audience.t2">o seguinte paso.</em></h2>
+          <p data-i18n="audience.intro">O importante é ter unha idea, unha necesidade ou un proxecto que poida ter sentido dentro dunha oportunidade europea.</p>
         </div>
         <div class="audience-list reveal">
-          <div class="audience-item"><span class="audience-index">01</span><strong>Asociaciones</strong><span class="audience-mark">+</span></div>
-          <div class="audience-item"><span class="audience-index">02</span><strong>Entidades sociales</strong><span class="audience-mark">+</span></div>
-          <div class="audience-item"><span class="audience-index">03</span><strong>Organizaciones juveniles</strong><span class="audience-mark">+</span></div>
-          <div class="audience-item"><span class="audience-index">04</span><strong>Organismos públicos</strong><span class="audience-mark">+</span></div>
-          <div class="audience-item"><span class="audience-index">05</span><strong>Centros educativos</strong><span class="audience-mark">+</span></div>
-          <div class="audience-item"><span class="audience-index">06</span><strong>ONG</strong><span class="audience-mark">+</span></div>
+          <div class="audience-item"><span class="audience-index">01</span><strong data-i18n="aud1">Asociacións</strong><span class="audience-mark" aria-hidden="true">+</span></div>
+          <div class="audience-item"><span class="audience-index">02</span><strong data-i18n="aud2">Entidades sociais</strong><span class="audience-mark" aria-hidden="true">+</span></div>
+          <div class="audience-item"><span class="audience-index">03</span><strong data-i18n="aud3">Organizacións xuvenís</strong><span class="audience-mark" aria-hidden="true">+</span></div>
+          <div class="audience-item"><span class="audience-index">04</span><strong data-i18n="aud4">Organismos públicos</strong><span class="audience-mark" aria-hidden="true">+</span></div>
+          <div class="audience-item"><span class="audience-index">05</span><strong data-i18n="aud5">Centros educativos</strong><span class="audience-mark" aria-hidden="true">+</span></div>
+          <div class="audience-item"><span class="audience-index">06</span><strong data-i18n="aud6">ONG</strong><span class="audience-mark" aria-hidden="true">+</span></div>
         </div>
       </div>
-      <div class="audience-bottom container"><span>No hace falta ser una gran organización</span><span>ni tener experiencia previa.</span></div>
+      <div class="audience-bottom container"><span data-i18n="audience.bottom1">Non fai falta ser unha gran organización</span><span data-i18n="audience.bottom2">nin ter experiencia previa.</span></div>
     </section>
 
-    <section class="section why" id="por-que" aria-labelledby="why-title">
-      <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div>
-            <p class="eyebrow"><span class="eyebrow-number">05</span> POR QUÉ PULOPROXECTO</p>
-            <h2 id="why-title">Experiencia práctica, <em>no solo teoría.</em></h2>
-          </div>
-          <p class="heading-aside">Proyectos europeos con sentido, construidos desde la realidad de cada organización.</p>
-        </div>
-        <div class="why-grid">
-          <article class="why-item reveal"><span class="why-number">01</span><div><h3>Cercanía</h3><p>Trabajamos directamente con cada organización para entender su contexto, sus necesidades y las personas con las que trabaja.</p></div></article>
-          <article class="why-item reveal"><span class="why-number">02</span><div><h3>Experiencia</h3><p>Conocemos los proyectos europeos desde la experiencia práctica de haberlos diseñado y desarrollado.</p></div></article>
-          <article class="why-item reveal"><span class="why-number">03</span><div><h3>Enfoque práctico</h3><p>No se trata de llenar una solicitud de palabras. Se trata de construir un proyecto con sentido.</p></div></article>
-          <article class="why-item why-item-accent reveal"><span class="why-number">04</span><div><h3>Sin coste inicial</h3><p>La organización no necesita asumir un coste inicial para desarrollar la propuesta. Solo cobramos nuestros honorarios si el proyecto resulta aprobado y recibe financiación.</p></div></article>
-        </div>
+    <section class="section pricing section-dark" id="modelo" aria-labelledby="pricing-title">
+      <div class="container pricing-inner">
+        <p class="eyebrow eyebrow-light"><span class="eyebrow-number">05</span> <span data-i18n="pricing.eyebrow">O MODELO DE COLABORACIÓN</span></p>
+        <h2 id="pricing-title"><span data-i18n="pricing.t1">Presentades o proxecto.</span> <em data-i18n="pricing.t2">Nós asumimos o risco.</em></h2>
+        <p class="pricing-text" data-i18n="pricing.text">Non pagades por adiantado. Solo cobramos se a proposta é aprobada e recibe financiación.</p>
+        <p class="pricing-conditions" data-i18n="pricing.conditions">As condicións económicas acórdanse previamente e quedan definidas antes de comezar a traballar.</p>
+        <a class="button button-accent" href="#contacto"><span data-i18n="pricing.cta">Contade a vosa idea</span> <span aria-hidden="true">↗</span></a>
       </div>
+      <div class="pricing-rings" aria-hidden="true"></div>
     </section>
 
-    <section class="section process section-paper-alt" id="proceso" aria-labelledby="process-title">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow"><span class="eyebrow-number">06</span> EL CAMINO</p>
-          <h2 id="process-title">Un proceso <em>sencillo.</em></h2>
-        </div>
-        <div class="process-track">
-          <div class="process-line" aria-hidden="true"><span></span></div>
-          <article class="process-step reveal"><span class="step-number">01</span><div class="step-marker" aria-hidden="true"></div><h3>Hablamos</h3><p>Conocemos vuestra organización, vuestra realidad y vuestra idea.</p></article>
-          <article class="process-step reveal"><span class="step-number">02</span><div class="step-marker" aria-hidden="true"></div><h3>Diseñamos</h3><p>Analizamos la idea y definimos cómo podría convertirse en un proyecto europeo.</p></article>
-          <article class="process-step reveal"><span class="step-number">03</span><div class="step-marker" aria-hidden="true"></div><h3>Redactamos</h3><p>Preparamos la propuesta y la documentación necesaria.</p></article>
-          <article class="process-step reveal"><span class="step-number">04</span><div class="step-marker step-marker-final" aria-hidden="true">↗</div><h3>Presentamos</h3><p>Revisamos el proyecto y os acompañamos hasta dejarlo preparado para su presentación.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section references" id="proyectos" aria-labelledby="references-title">
-      <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div>
-            <p class="eyebrow"><span class="eyebrow-number">07</span> EXPERIENCIA PROPIA</p>
-            <h2 id="references-title">Esto no es <em>teoría.</em></h2>
-          </div>
-          <p class="heading-aside">Antes de ayudar a otras organizaciones, hemos desarrollado nuestros propios proyectos europeos.</p>
-        </div>
-        <div class="reference-grid">
-          <article class="reference-card reference-card-one reveal">
-            <div class="reference-visual" aria-hidden="true"><span class="reference-big-number">01</span><span class="reference-route"></span><span class="reference-arrow">↗</span></div>
-            <div class="reference-body"><span class="program-tag">Intercambio juvenil · Erasmus+ KA1</span><h3>Barrios a Ceo Aberto</h3><p>Proyecto europeo de intercambio juvenil.</p></div>
-          </article>
-          <article class="reference-card reference-card-two reveal">
-            <div class="reference-visual" aria-hidden="true"><span class="reference-big-number">02</span><span class="reference-route"></span><span class="reference-arrow">↗</span></div>
-            <div class="reference-body"><span class="program-tag">DiscoverEU</span><h3>Las Huellas de Europa de Ayer y Hoy: de Muros a Puentes</h3><p>Proyecto europeo de movilidad y aprendizaje.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about section-paper-alt" id="quienes-somos" aria-labelledby="about-title">
-      <div class="container about-grid">
-        <div class="about-stamp reveal" aria-hidden="true"><span>PULO</span><strong>+</strong><span>PROXECTO</span><small>SANTIAGO<br>DE COMPOSTELA</small></div>
-        <div class="about-copy reveal">
-          <p class="eyebrow"><span class="eyebrow-number">08</span> EL EQUIPO</p>
-          <h2 id="about-title">Somos un equipo que hace <em>proyectos europeos.</em></h2>
-          <p>PuloProxecto nace de la experiencia de un equipo de profesionales de Santiago de Compostela vinculado al ámbito del ocio, el tiempo libre, la juventud y la educación no formal.</p>
-          <p>Antes de ofrecer nuestros servicios a otras organizaciones hemos trabajado en nuestros propios proyectos europeos.</p>
-          <p>Esa experiencia nos permite entender el proceso desde ambos lados: desarrollar una candidatura sobre el papel y convertir después esa propuesta en un proyecto real.</p>
-          <blockquote><span class="quote-mark">“</span><p>Proyectos europeos con sentido, diseñados alrededor de las personas y las organizaciones que los hacen posibles.</p></blockquote>
-        </div>
-      </div>
-    </section>
-
+    <!-- DATOS DE EXEMPLO para o deseño: substituír polos datos reais dos proxectos. -->
     <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq-grid">
         <div class="faq-intro reveal">
-          <p class="eyebrow"><span class="eyebrow-number">09</span> PREGUNTAS FRECUENTES</p>
-          <h2 id="faq-title">Lo que os queréis <em>preguntar.</em></h2>
-          <p>Si no encuentras aquí lo que buscas, podemos empezar hablando de vuestra organización.</p>
+          <p class="eyebrow"><span class="eyebrow-number">06</span> <span data-i18n="faq.eyebrow">PREGUNTAS FRECUENTES</span></p>
+          <h2 id="faq-title"><span data-i18n="faq.t1">O que queredes</span> <em data-i18n="faq.t2">preguntar.</em></h2>
+          <p data-i18n="faq.intro">Se non atopas aquí o que buscas, podemos empezar falando da vosa organización.</p>
         </div>
         <div class="faq-list reveal">
           <details open>
-            <summary><span>¿Tenemos que tener ya una idea?</span><b aria-hidden="true">+</b></summary>
-            <div class="faq-answer"><p>No necesariamente. Podemos empezar hablando de vuestra organización, lo que hacéis y vuestras necesidades para identificar posibles oportunidades.</p></div>
+            <summary><span data-i18n="faq.q1">Canto custa?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a1">Non existe custo inicial para desenvolver a proposta. Os honorarios cóbranse unicamente se o proxecto resulta aprobado e recibe financiación, segundo as condicións acordadas previamente.</p></div>
           </details>
           <details>
-            <summary><span>¿Necesitamos experiencia previa en Erasmus+?</span><b aria-hidden="true">+</b></summary>
-            <div class="faq-answer"><p>No. Podemos trabajar con organizaciones que se acercan por primera vez a los programas europeos.</p></div>
+            <summary><span data-i18n="faq.q2">Que pasa se o proxecto non é aprobado?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a2">Se a candidatura non recibe financiación, non se xeran honorarios polo traballo de candidatura, segundo as condicións acordadas previamente.</p></div>
           </details>
           <details>
-            <summary><span>¿Tenemos que buscar nosotros los socios?</span><b aria-hidden="true">+</b></summary>
-            <div class="faq-answer"><p>Dependiendo del proyecto, podemos ayudar a identificar posibles organizaciones colaboradoras y orientar sobre el proceso.</p></div>
+            <summary><span data-i18n="faq.q3">A primeira conversa ten algún custo?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a3">Non. A primeira conversa é gratuíta e sen compromiso.</p></div>
           </details>
           <details>
-            <summary><span>¿Cuánto cuesta?</span><b aria-hidden="true">+</b></summary>
-            <div class="faq-answer"><p>No existe coste inicial para desarrollar la propuesta. Los honorarios se cobran únicamente si el proyecto resulta aprobado y recibe financiación, según las condiciones acordadas previamente.</p></div>
+            <summary><span data-i18n="faq.q4">Traballades só con asociacións?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a4">Non. Traballamos con asociacións, ONG, entidades xuvenís, organismos públicos e outras organizacións que poidan beneficiarse dos programas de financiación europea.</p></div>
           </details>
           <details>
-            <summary><span>¿Garantizáis la aprobación?</span><b aria-hidden="true">+</b></summary>
-            <div class="faq-answer"><p>No. Ninguna consultora puede garantizar la aprobación de una candidatura. Nuestro trabajo consiste en desarrollar una propuesta sólida, coherente y alineada con los criterios de la convocatoria.</p></div>
+            <summary><span data-i18n="faq.q5">É necesario que vos encarguedes de todo o proxecto?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a5">Non. O servizo adáptase ás necesidades de cada entidade: desde a identificación de oportunidades e o deseño do proxecto ata a redacción da candidatura e o acompañamento.</p></div>
           </details>
+          <details>
+            <summary><span data-i18n="faq.q6">Tedes que ter xa unha idea?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a6">Non necesariamente. Podemos empezar falando da vosa organización, do que facedes e das vosas necesidades para identificar posibles oportunidades.</p></div>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q7">Precisades experiencia previa en Erasmus+?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a7">Non. Podemos traballar con organizacións que se achegan por primeira vez aos programas europeos.</p></div>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q8">Tedes que buscar vós os socios?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a8">Dependendo do proxecto, podemos axudar a identificar posibles organizacións colaboradoras e orientar sobre o proceso.</p></div>
+          </details>
+          <details>
+            <summary><span data-i18n="faq.q9">Garantides a aprobación?</span><b aria-hidden="true">+</b></summary>
+            <div class="faq-answer"><p data-i18n="faq.a9">Non. Ningunha consultora pode garantir a aprobación dunha candidatura. O noso traballo consiste en desenvolver unha proposta sólida, coherente e aliñada cos criterios da convocatoria.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section references section-paper-alt" id="proyectos" aria-labelledby="references-title">
+      <div class="container">
+        <div class="section-heading split-heading reveal">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-number">07</span> <span data-i18n="refs.eyebrow">EXPERIENCIA PROPIA</span></p>
+            <h2 id="references-title"><span data-i18n="refs.t1">Isto non é</span> <em data-i18n="refs.t2">teoría.</em></h2>
+          </div>
+          <p class="heading-aside" data-i18n="refs.aside">Antes de axudar a outras organizacións, desenvolvemos os nosos propios proxectos europeos.</p>
+        </div>
+        <p class="refs-statement reveal" data-i18n="refs.statement">Non só sabemos redactar proxectos: tamén coñecemos de primeira man como se desenvolve e xestiona un proxecto europeo.</p>
+        <div class="reference-grid">
+          <article class="reference-card reference-card-one reveal">
+            <div class="reference-visual" aria-hidden="true"><span class="reference-big-number">01</span><span class="reference-route"></span><span class="reference-arrow">↗</span></div>
+            <div class="reference-body">
+              <span class="program-tag" data-i18n="ref1.tag">Intercambio xuvenil · Erasmus+ KA1</span>
+              <h3 data-i18n="ref1.title">Barrios a Ceo Aberto</h3>
+              <div class="ref-block"><span class="ref-label" data-i18n="ref1.whatLabel">Que fixemos</span><p data-i18n="ref1.what">Deseño do proxecto, redacción da candidatura e xestión das actividades de educación non formal en Santiago de Compostela.</p></div>
+              <div class="ref-block"><span class="ref-label" data-i18n="ref1.resultLabel">Resultado</span><p data-i18n="ref1.result">Proposta aprobada e proxecto desenvolvido con éxito.</p></div>
+              <div class="stat-row">
+                <span class="stat-chip" data-i18n="ref1.s1">32 participantes</span>
+                <span class="stat-chip" data-i18n="ref1.s2">5 países</span>
+                <span class="stat-chip" data-i18n="ref1.s3">10 días</span>
+                <span class="stat-chip" data-i18n="ref1.s4">27.850 € de financiamento</span>
+              </div>
+            </div>
+          </article>
+          <article class="reference-card reference-card-two reveal">
+            <div class="reference-visual" aria-hidden="true"><span class="reference-big-number">02</span><span class="reference-route"></span><span class="reference-arrow">↗</span></div>
+            <div class="reference-body">
+              <span class="program-tag" data-i18n="ref2.tag">DiscoverEU</span>
+              <h3 data-i18n="ref2.title">As Pegadas de Europa de Onte e Hoxe: de Muros a Pontes</h3>
+              <div class="ref-block"><span class="ref-label" data-i18n="ref2.whatLabel">Que fixemos</span><p data-i18n="ref2.what">Deseño da mobilidade, redacción da candidatura e acompañamento durante todo o desenvolvemento do proxecto.</p></div>
+              <div class="ref-block"><span class="ref-label" data-i18n="ref2.resultLabel">Resultado</span><p data-i18n="ref2.result">Candidatura aprobada na primeira convocatoria presentada.</p></div>
+              <div class="stat-row">
+                <span class="stat-chip" data-i18n="ref2.s1">24 participantes</span>
+                <span class="stat-chip" data-i18n="ref2.s2">4 países</span>
+                <span class="stat-chip" data-i18n="ref2.s3">12 días</span>
+                <span class="stat-chip" data-i18n="ref2.s4">18.400 € de financiamento</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="final-cta section-dark" id="contacto" aria-labelledby="contact-title">
       <div class="container final-cta-inner">
-        <div class="cta-decoration" aria-hidden="true"><span></span><span></span><span></span></div>
-        <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> EL SIGUIENTE PASO</p>
-        <h2 id="contact-title">¿Tienes una idea?<br><em>Hablemos.</em></h2>
-        <p>Cuéntanos qué quieres hacer, qué hace vuestra organización y con quién trabajáis. Valoraremos juntos si puede convertirse en un proyecto europeo.</p>
-        <!-- Sustituir [EMAIL] por la dirección de contacto definitiva. -->
-        <a class="button button-accent button-large" href="mailto:[EMAIL]">Contactar con PuloProxecto <span aria-hidden="true">↗</span></a>
+        <div class="final-cta-copy">
+          <div class="cta-decoration" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="eyebrow eyebrow-light"><span class="eyebrow-dot"></span> <span data-i18n="cta.eyebrow">O SEGUINTE PASO</span></p>
+          <h2 id="contact-title"><span data-i18n="cta.t1">Tedes unha idea?</span><br><em data-i18n="cta.t2">Falemos.</em></h2>
+          <p class="cta-text" data-i18n="cta.text">Contade connosco que queredes facer e analizaremos xuntos se existe unha oportunidade de financiación axeitada.</p>
+          <p class="cta-note" data-i18n="cta.note">Primeira conversa gratuíta e sen compromiso.</p>
+          <p class="cta-alt"><span data-i18n="cta.alt">Ou escríbenos a:</span> <a href="mailto:[EMAIL]">[EMAIL]</a></p>
+        </div>
+        <!-- Substituír [EMAIL] pola dirección de contacto definitiva. Para o envío real, configura WEB3FORMS_KEY en js/config.js. -->
+        <form class="contact-form" data-form novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-name" data-i18n="form.name">Nome</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" placeholder="O teu nome" data-i18n-ph="form.namePh" required>
+              <span class="form-error" data-error hidden></span>
+            </div>
+            <div class="form-field">
+              <label for="f-org" data-i18n="form.org">Organización</label>
+              <input id="f-org" name="org" type="text" autocomplete="organization" placeholder="Nome da organización" data-i18n-ph="form.orgPh">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="f-email" data-i18n="form.email">Correo electrónico</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder="nome@organizacion.org" data-i18n-ph="form.emailPh" required>
+            <span class="form-error" data-error hidden></span>
+          </div>
+          <div class="form-field">
+            <label for="f-msg" data-i18n="form.msg">Mensaxe</label>
+            <textarea id="f-msg" name="message" rows="4" placeholder="Contade connosco a vosa idea..." data-i18n-ph="form.msgPh" required></textarea>
+            <span class="form-error" data-error hidden></span>
+          </div>
+          <div class="h-captcha" data-captcha="true" data-theme="dark" data-lang="gl"></div>
+          <p class="form-error form-error-global" data-error-send hidden></p>
+          <div class="form-actions">
+            <button class="button button-accent button-large" type="submit" data-submit><span data-i18n="form.submit">Contade a vosa idea</span> <span aria-hidden="true">↗</span></button>
+            <p class="form-note" data-i18n="cta.note">Primeira conversa gratuíta e sen compromiso.</p>
+          </div>
+          <div class="form-success" data-form-success hidden role="status">
+            <p data-i18n="form.success">Grazas! Recibimos a vosa mensaxe e responderemos o antes posible.</p>
+            <div class="form-success-actions">
+              <button type="button" class="button button-ghost" data-copy><span data-i18n="form.copy">Copiar mensaxe</span></button>
+              <a class="button button-ghost" data-mailto href="mailto:[EMAIL]"><span data-i18n="form.mailto">Enviar por correo</span> <span aria-hidden="true">↗</span></a>
+            </div>
+            <button type="button" class="form-reset" data-reset data-i18n="form.reset">Enviar outra mensaxe</button>
+          </div>
+        </form>
       </div>
       <div class="final-cta-line" aria-hidden="true"></div>
     </section>
@@ -336,18 +364,17 @@
   <footer class="site-footer">
     <div class="container footer-main">
       <div class="footer-brand">
-        <a class="brand brand-footer" href="#inicio" aria-label="PuloProxecto, volver al inicio"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-name">Pulo<span>Proxecto</span></span></a>
-        <p>Consultoría y proyectos europeos.</p>
+        <a class="brand brand-footer" href="#inicio" aria-label="PuloProxecto"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-name">Pulo<span>Proxecto</span></span></a>
+        <p data-i18n="footer.tagline">Consultoría e proxectos europeos.</p>
       </div>
-      <nav class="footer-nav" aria-label="Navegación del pie de página">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Qué hacemos</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#proceso">Cómo trabajamos</a>
-        <a href="#contacto">Contacto</a>
+      <nav class="footer-nav" aria-label="Navegación do pé de páxina">
+        <a href="#inicio" data-i18n="footer.inicio">Inicio</a>
+        <a href="#proyectos" data-i18n="footer.proxectos">Proxectos</a>
+        <a href="#proceso" data-i18n="footer.proceso">Como traballamos</a>
+        <a href="#contacto" data-i18n="footer.contacto">Contacto</a>
       </nav>
       <div class="footer-contact">
-        <!-- Sustituir los placeholders por los datos definitivos. -->
+        <!-- Substituír os placeholders polos datos definitivos. -->
         <a href="mailto:[EMAIL]">[EMAIL]</a>
         <a href="#">[INSTAGRAM]</a>
         <a href="#">[LINKEDIN]</a>
@@ -355,11 +382,20 @@
     </div>
     <div class="container footer-bottom">
       <span>© PuloProxecto</span>
-      <div><a href="#">[AVISO LEGAL]</a><a href="#">[POLÍTICA DE PRIVACIDAD]</a></div>
-      <span>[RAZÓN SOCIAL / CIF / DATOS LEGALES]</span>
+      <div><a href="#" data-i18n="footer.legal1">[AVISO LEGAL]</a><a href="#" data-i18n="footer.legal2">[POLÍTICA DE PRIVACIDADE]</a></div>
+      <span data-i18n="footer.legal3">[RAZÓN SOCIAL / CIF / DATOS LEGAIS]</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
+  <script src="i18n/gl.js"></script>
+  <script src="i18n/es.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/form.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
