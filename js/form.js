@@ -97,14 +97,14 @@
     }
 
     function showSuccess(values) {
-      var dict = dict();
-      lastMessage = composeMessage(dict, values);
+      var translations = dict();
+      lastMessage = composeMessage(translations, values);
 
       if (mailtoLink) {
         mailtoLink.setAttribute(
           "href",
           "mailto:" + config.CONTACT_EMAIL +
-            "?subject=" + encodeURIComponent(dict["form.subject"]) +
+            "?subject=" + encodeURIComponent(translations["form.subject"]) +
             "&body=" + encodeURIComponent(lastMessage)
         );
       }
