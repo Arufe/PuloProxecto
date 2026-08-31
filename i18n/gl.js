@@ -166,7 +166,7 @@ window.PP_TRANSLATIONS.gl = {
       "footer.proxectos": "Proxectos",
       "footer.proceso": "Como traballamos",
       "footer.contacto": "Contacto",
-      "footer.legal1": "[AVISO LEGAL]",
-      "footer.legal2": "[POLÍTICA DE PRIVACIDADE]",
-      "footer.legal3": "[RAZÓN SOCIAL / CIF / DATOS LEGAIS]"
+      "footer.legal1": "Aviso legal",
+      "footer.legal2": "Política de privacidade",
+      "footer.legal4": "Política de cookies"
 };

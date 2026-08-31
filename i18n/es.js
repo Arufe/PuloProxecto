@@ -166,7 +166,7 @@ window.PP_TRANSLATIONS.es = {
       "footer.proxectos": "Proyectos",
       "footer.proceso": "Cómo trabajamos",
       "footer.contacto": "Contacto",
-      "footer.legal1": "[AVISO LEGAL]",
-      "footer.legal2": "[POLÍTICA DE PRIVACIDAD]",
-      "footer.legal3": "[RAZÓN SOCIAL / CIF / DATOS LEGALES]"
+      "footer.legal1": "Aviso legal",
+      "footer.legal2": "Política de privacidad",
+      "footer.legal4": "Política de cookies"
 };
