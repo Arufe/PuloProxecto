@@ -12,6 +12,15 @@
     return window.PP && window.PP.i18n ? window.PP.i18n.getCurrentLang() : "gl";
   }
 
+  // Extrae el mensaje de error del servidor si lo trae (la respuesta de
+  // Web3Forms anida el mensaje en "body" o lo pone en la raíz).
+  function serverMessage(data) {
+    if (!data) return "";
+    if (typeof data.message === "string") return data.message;
+    if (data.body && typeof data.body.message === "string") return data.body.message;
+    return "";
+  }
+
   function initForm() {
     var form = document.querySelector("[data-form]");
     if (!form) return;
@@ -163,20 +172,48 @@
 
       setSending(true);
 
-      var formData = new FormData(form);
-      formData.append("access_key", config.WEB3FORMS_KEY);
-      formData.append("subject", dict()["form.subject"]);
+      // Envío como application/json (no FormData/multipart): la ruta multipart
+      // de Web3Forms responde con una redirección que el navegador bloquea por
+      // CORS — el correo se envía pero el fetch falla y mostraba error.
+      // Ver docs oficiales de Web3Forms (Troubleshooting > CORS Error).
+      var payload = {
+        access_key: config.WEB3FORMS_KEY,
+        subject: dict()["form.subject"],
+        name: values.name,
+        org: values.org,
+        email: values.email,
+        message: values.message
+      };
+      if (captchaField && captchaField.value) {
+        payload["h-captcha-response"] = captchaField.value;
+      }
 
-      fetch(config.WEB3FORMS_URL, { method: "POST", body: formData })
+      fetch(config.WEB3FORMS_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
         .then(function (response) {
-          return response.json().then(function (data) {
-            if (!response.ok || !data.success) throw new Error(data.message || "HTTP " + response.status);
-            showSuccess(values);
-          });
+          // Si la respuesta no es JSON (p. ej. un challenge HTML), seguimos con null.
+          return response
+            .json()
+            .catch(function () { return null; })
+            .then(function (data) {
+              if (!response.ok || !data || !data.success) {
+                throw new Error(serverMessage(data) || "HTTP " + response.status);
+              }
+              showSuccess(values);
+            });
         })
-        .catch(function () {
+        .catch(function (error) {
+          console.error("[PuloProxecto] Error ao enviar o formulario:", error);
           if (sendErrorEl) {
-            sendErrorEl.textContent = dict()["err.send"];
+            var base = dict()["err.send"];
+            var detail = error && error.message ? error.message : "";
+            sendErrorEl.textContent = detail && detail.indexOf("HTTP ") !== 0 ? base + " — " + detail : base;
             sendErrorEl.hidden = false;
           }
         })
