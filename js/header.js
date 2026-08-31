@@ -11,10 +11,12 @@
   var nav = document.querySelector("#main-nav");
   var navLinks = nav ? Array.prototype.slice.call(nav.querySelectorAll("a")) : [];
 
-  function updateHeader() {
-    if (header) {
-      header.classList.toggle("is-scrolled", window.scrollY > 24);
-    }
+  // Recibe la posición de scroll como argumento para evitar leer
+  // window.scrollY después de escrituras en el DOM (reflow forzado).
+  function updateHeader(y) {
+    if (!header) return;
+    var scrollY = typeof y === "number" ? y : window.scrollY;
+    header.classList.toggle("is-scrolled", scrollY > 24);
   }
 
   function closeMenu() {

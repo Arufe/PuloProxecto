@@ -7,6 +7,10 @@
 (function () {
   "use strict";
 
+  // Posición de scroll inicial: se lee antes de cualquier escritura en
+  // el DOM para no forzar un reflow al inicializar el header.
+  var initialScrollY = window.scrollY;
+
   var PP = window.PP;
   if (!PP) return;
 
@@ -34,9 +38,11 @@
 
   // 3. Header + menú móvil
   safe("header", PP.header, "initHeader");
-  safe("header.updateHeader", PP.header, "updateHeader");
   if (PP.header && typeof PP.header.updateHeader === "function") {
-    window.addEventListener("scroll", PP.header.updateHeader, { passive: true });
+    PP.header.updateHeader(initialScrollY);
+    window.addEventListener("scroll", function () {
+      PP.header.updateHeader(window.scrollY);
+    }, { passive: true });
   }
 
   // 4. Navegación activa, FAQ y formulario

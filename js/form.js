@@ -23,6 +23,19 @@
     var mailtoLink = form.querySelector("[data-mailto]");
     var resetBtn = form.querySelector("[data-reset]");
     var lastMessage = "";
+    var captchaLoaded = false;
+
+    // hCaptcha solo se necesita al rellenar el formulario: se carga
+    // el cliente de Web3Forms en la primera interacción (ahorra ~200 KiB
+    // de JS en la carga inicial de la página).
+    function loadCaptcha() {
+      if (captchaLoaded) return;
+      captchaLoaded = true;
+      var script = document.createElement("script");
+      script.src = "https://web3forms.com/client/script.js";
+      script.async = true;
+      document.body.appendChild(script);
+    }
 
     function showError(field, key) {
       var wrapper = field.closest(".form-field");
@@ -140,6 +153,7 @@
 
       var captchaField = form.querySelector('textarea[name="h-captcha-response"]');
       if (captchaField && !captchaField.value) {
+        loadCaptcha();
         if (sendErrorEl) {
           sendErrorEl.textContent = dict()["err.captcha"];
           sendErrorEl.hidden = false;
@@ -208,6 +222,10 @@
         form.querySelectorAll(".form-field.has-error").forEach(clearError);
       });
     }
+
+    ["focusin", "pointerdown"].forEach(function (eventType) {
+      form.addEventListener(eventType, loadCaptcha, { once: true });
+    });
 
     ["input", "blur"].forEach(function (eventType) {
       form.addEventListener(eventType, function (event) {
