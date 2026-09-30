@@ -87,7 +87,7 @@ window.PP_TRANSLATIONS.gl = {
       "pricing.t2": "Nós asumimos o risco.",
       "pricing.text": "Non pagades por adiantado. Solo cobramos se a proposta é aprobada e recibe financiación.",
       "pricing.conditions": "As condicións económicas acórdanse previamente e quedan definidas antes de comezar a traballar.",
-      "pricing.cta": "Contade a vosa idea",
+      "pricing.cta": "Contádesnos a vosa idea",
       "refs.eyebrow": "EXPERIENCIA PROPIA",
       "refs.t1": "Isto non é",
       "refs.t2": "teoría.",
